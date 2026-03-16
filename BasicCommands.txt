@@ -1,0 +1,53 @@
+install solidity extension in vs code
+
+create blockchain folder
+
+npm init -y
+
+npm install --save-dev hardhat@^2.19.0
+
+npm install --save-dev @nomicfoundation/hardhat-toolbox@^2.0.2
+
+npx hardhat init
+
+to start ganache:
+On terminal: npx ganache-cli
+
+npx hardhat compile
+
+npx hardhat test   
+
+Local Development Blockchains (What We're Using)
+
+npx hardhat run scripts/deploy.js --network ganache
+Ganache - Runs entirely on your computer
+
+Instant, free transactions
+
+Private and disposable
+
+Setting up Roles
+npx hardhat run scripts/setupRoles.js --network ganache
+
+✅ THIS is what we're using
+Your Computer:
+┌─────────────────────────────────────────┐
+│              HARDHAT                    │ ← Development Tools
+│  • Write contracts (.sol files)         │
+│  • Run tests                            │
+│  • Create deployment scripts            │
+└─────────────────────────────────────────┘
+                    ↓ (deploys to)
+┌─────────────────────────────────────────┐
+│              GANACHE                    │ ← Local Blockchain
+│  • Private Ethereum network             │
+│  • 10 test accounts with fake ETH       │
+│  • Instant transactions                 │
+└─────────────────────────────────────────┘
+                    ↓ (connects to)
+┌─────────────────────────────────────────┐
+│              REACT FRONTEND             │ ← User Interface
+│  • Web app that users see               │
+│  • Connects via MetaMask                │
+│  • Calls contract functions             │
+└─────────────────────────────────────────┘
